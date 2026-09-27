@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101d32" />
+    <title>Northstar Air | Operations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#" data-view="dashboard" aria-label="Northstar Air home">
+          <span class="brand-mark">N</span>
+          <span><strong>northstar</strong><small>AIR OPERATIONS</small></span>
+        </a>
+        <div class="workspace-label">WORKSPACE</div>
+        <nav class="side-nav" aria-label="Main navigation">
+          <button class="nav-item active" data-view="dashboard"><span class="nav-icon">⌂</span>Overview</button>
+          <button class="nav-item" data-view="flights"><span class="nav-icon">✈</span>Flight management<span class="nav-count" id="flight-nav-count"></span></button>
+          <button class="nav-item" data-view="search"><span class="nav-icon">⌕</span>Search &amp; book</button>
+          <button class="nav-item" data-view="bookings"><span class="nav-icon">▤</span>Bookings</button>
+          <button class="nav-item" data-view="waitlist"><span class="nav-icon">⇄</span>Waitlist<span class="nav-count" id="waitlist-nav-count"></span></button>
+          <button class="nav-item" data-view="approvals"><span class="nav-icon">✓</span>Approvals<span class="nav-count" id="approval-nav-count"></span></button>
+        </nav>
+        <div class="workspace-label second-label">OPERATIONS</div>
+        <nav class="side-nav" aria-label="Operations navigation">
+          <button class="nav-item" data-view="automations"><span class="nav-icon">◷</span>Automations</button>
+          <button class="nav-item" data-view="audit"><span class="nav-icon">≡</span>Audit &amp; architecture</button>
+          <button class="nav-item" data-view="requirements"><span class="nav-icon">▦</span>Feature coverage</button>
+        </nav>
+        <div class="sidebar-spacer"></div>
+        <div class="environment-card">
+          <span class="environment-dot"></span>
+          <div><strong>Demo environment</strong><small>Local sample data only</small></div>
+          <span class="demo-badge">DEMO</span>
+        </div>
+        <div class="user-card">
+          <div class="avatar">AM</div>
+          <div class="user-info"><strong>Alex Morgan</strong><small id="role-label">Super-admin</small></div>
+          <select id="role-select" aria-label="Switch demo role">
+            <option value="super-admin">Super-admin</option>
+            <option value="ops-agent">Operations agent</option>
+          </select>
+        </div>
+      </aside>
+
+      <div class="main-column">
+        <header class="topbar">
+          <button class="mobile-menu" id="mobile-menu" aria-label="Toggle navigation">☰</button>
+          <div class="breadcrumbs"><span>Northstar Air</span><span class="crumb-slash">/</span><strong id="breadcrumb-current">Overview</strong></div>
+          <div class="topbar-actions">
+            <span class="live-pill" id="connection-pill"><i></i> Demo data</span>
+            <button class="btn btn-small" id="connect-api" data-action="connect-api">Connect API</button>
+            <button class="icon-action" id="help-button" aria-label="About this demo" title="About this demo">?</button>
+            <div class="avatar top-avatar">AM</div>
+          </div>
+        </header>
+        <main id="main-content" tabindex="-1"></main>
+        <footer class="page-footer"><span>Northstar Air Operations</span><span>Interactive prototype · changes are saved in this browser</span></footer>
+      </div>
+    </div>
+    <div class="modal-backdrop" id="modal-backdrop" hidden>
+      <section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"></section>
+    </div>
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
